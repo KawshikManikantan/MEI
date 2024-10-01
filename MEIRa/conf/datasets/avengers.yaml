@@ -1,0 +1,5 @@
+avengers:
+  name: "avengers"
+  targeted_eval: False
+  num_test_docs: 1
+  has_conll: True

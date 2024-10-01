@@ -1,0 +1,6 @@
+preco:
+  name: "PreCo"
+  targeted_eval: False
+  num_train_docs: 3000
+  num_dev_docs: 500
+  num_test_docs: 500

@@ -1,0 +1,5 @@
+defaults:
+  - litbank
+  - fantasy
+  - ontonotes
+  - aft

@@ -1,0 +1,14 @@
+models/
+models_orig/
+baseline_src/wandb
+data/raw_data
+**/wandb/
+**/trash/
+**/.env
+**/__pycache__/
+**/.hydra/
+**/*result*.jsonl
+**/*nohup.out**
+**/extras/
+models_7_6_24/**
+results_old/**

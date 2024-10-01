@@ -1,0 +1,5 @@
+aft_ind:
+  name: "aft_ind"
+  targeted_eval: False
+  num_test_docs: 23
+  has_conll: False

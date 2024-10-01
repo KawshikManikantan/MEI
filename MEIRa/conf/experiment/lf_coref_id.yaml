@@ -1,0 +1,26 @@
+# @package _global_
+
+# This configuration trains a joint model for Ontonotes, Litbank, and Preco.
+# Note that OntoNotes and Preco are downsampled in this configuration.
+
+# Model name in CRAC 2021: longdoc^S Joint
+
+
+defaults:
+  - override /datasets: joint_lf
+  - override /trainer: train.yaml
+  - override /model: model.yaml
+
+trainer:
+  log_frequency: 500
+  max_evals: 20
+  eval_per_k_steps: null
+  patience: 10
+
+model:
+  doc_encoder:
+    add_speaker_tokens: True
+  memory:
+    pseudo_dist: False
+
+log_dir_add: "coref_id"

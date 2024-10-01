@@ -1,0 +1,5 @@
+animal:
+  name: "animal"
+  targeted_eval: False
+  num_test_docs: 3
+  has_conll: True

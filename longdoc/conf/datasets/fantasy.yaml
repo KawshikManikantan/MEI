@@ -1,0 +1,9 @@
+fantasy:
+  name: "fantasy"
+  cluster_threshold: 2
+  canonical_cluster_threshold: 2
+  targeted_eval: False
+  num_train_docs: 171
+  num_dev_docs: 20
+  num_test_docs: 20
+  has_conll: True

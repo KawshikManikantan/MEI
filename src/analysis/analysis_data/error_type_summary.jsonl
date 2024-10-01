@@ -1,0 +1,28 @@
+{"model": "gpt", "setup": "h2s", "run": "run1", "dataset": "litbank", "split": "test", "o_c": 146, "ngo_c": 125, "Missing Mention": 213, "c_c": 21}
+{"model": "gpt", "setup": "h2s", "run": "run1", "dataset": "fantasy", "split": "test", "c_c": 133, "ngo_c": 771, "Missing Mention": 580, "o_c": 370}
+{"model": "static", "setup": "setup4", "run": "run1", "dataset": "litbank", "split": "test", "c_c": 134, "c_o": 71, "ngo_c": 51, "Missing Mention": 52, "o_c": 127}
+{"model": "static", "setup": "setup4", "run": "run2", "dataset": "litbank", "split": "test", "c_c": 88, "c_o": 101, "ngo_c": 33, "Missing Mention": 59, "o_c": 97}
+{"model": "static", "setup": "setup4", "run": "run3", "dataset": "litbank", "split": "test", "c_c": 91, "c_o": 91, "ngo_c": 43, "Missing Mention": 45, "o_c": 91}
+{"model": "static", "setup": "setup4", "run": "run4", "dataset": "litbank", "split": "test", "c_c": 96, "c_o": 71, "ngo_c": 50, "Missing Mention": 44, "o_c": 143}
+{"model": "static", "setup": "setup4", "run": "run5", "dataset": "litbank", "split": "test", "c_c": 108, "c_o": 92, "ngo_c": 42, "Missing Mention": 46, "o_c": 101}
+{"model": "name_map", "setup": "setup4", "run": "run5", "dataset": "fantasy", "split": "test", "c_c": 144, "c_o": 161, "ngo_c": 460, "Missing Mention": 129, "o_c": 103}
+{"model": "name_map", "setup": "setup4", "run": "run4", "dataset": "fantasy", "split": "test", "c_c": 118, "c_o": 133, "ngo_c": 475, "Missing Mention": 104, "o_c": 98}
+{"model": "name_map", "setup": "setup4", "run": "run3", "dataset": "fantasy", "split": "test", "c_c": 127, "c_o": 119, "ngo_c": 519, "Missing Mention": 92, "o_c": 94}
+{"model": "name_map", "setup": "setup4", "run": "run2", "dataset": "fantasy", "split": "test", "c_c": 127, "c_o": 208, "ngo_c": 515, "Missing Mention": 95, "o_c": 99}
+{"model": "name_map", "setup": "setup4", "run": "run1", "dataset": "fantasy", "split": "test", "c_c": 118, "c_o": 126, "ngo_c": 495, "Missing Mention": 97, "o_c": 123}
+{"model": "static", "setup": "setup4", "run": "run1", "dataset": "fantasy", "split": "test", "c_c": 117, "c_o": 64, "ngo_c": 520, "Missing Mention": 105, "o_c": 165}
+{"model": "static", "setup": "setup4", "run": "run2", "dataset": "fantasy", "split": "test", "c_c": 186, "c_o": 66, "ngo_c": 527, "Missing Mention": 87, "o_c": 142}
+{"model": "static", "setup": "setup4", "run": "run3", "dataset": "fantasy", "split": "test", "c_c": 95, "c_o": 79, "ngo_c": 522, "Missing Mention": 83, "o_c": 107}
+{"model": "static", "setup": "setup4", "run": "run4", "dataset": "fantasy", "split": "test", "c_c": 94, "c_o": 56, "ngo_c": 543, "Missing Mention": 80, "o_c": 160}
+{"model": "static", "setup": "setup4", "run": "run5", "dataset": "fantasy", "split": "test", "c_c": 133, "c_o": 68, "ngo_c": 526, "Missing Mention": 91, "o_c": 126}
+{"model": "name_map", "setup": "setup4", "run": "run5", "dataset": "litbank", "split": "test", "c_c": 243, "c_o": 75, "ngo_c": 31, "Missing Mention": 45, "o_c": 51}
+{"model": "name_map", "setup": "setup4", "run": "run4", "dataset": "litbank", "split": "test", "c_c": 158, "c_o": 95, "ngo_c": 31, "Missing Mention": 42, "o_c": 35}
+{"model": "name_map", "setup": "setup4", "run": "run3", "dataset": "litbank", "split": "test", "c_c": 83, "c_o": 77, "ngo_c": 36, "Missing Mention": 45, "o_c": 53}
+{"model": "name_map", "setup": "setup4", "run": "run2", "dataset": "litbank", "split": "test", "c_c": 47, "c_o": 105, "ngo_c": 27, "Missing Mention": 53, "o_c": 50}
+{"model": "name_map", "setup": "setup4", "run": "run1", "dataset": "litbank", "split": "test", "c_c": 71, "c_o": 228, "ngo_c": 33, "Missing Mention": 46, "o_c": 66}
+{"model": "name_map", "setup": "setup4", "run": "run1", "dataset": "litbank", "split": "test", "c_o": 228, "ngo_c": 33, "c_c": 71, "o_c": 66, "Missing Mention": 46}
+{"model": "gpt", "setup": "h2s", "run": "run1", "dataset": "fantasy", "split": "test", "ngo_c": 771, "Missing Mention": 580, "c_c": 133, "o_c": 370}
+{"model": "gpt", "setup": "setup2", "run": "run1", "dataset": "litbank", "split": "test", "c_o": 32, "c_c": 26, "Missing Mention": 1, "o_c": 210}
+{"model": "gpt", "setup": "setup2", "run": "run1", "dataset": "fantasy", "split": "test", "c_c": 133, "Missing Mention": 6, "o_c": 209, "c_o": 102}
+{"model": "gpt", "setup": "setup2", "run": "run1", "dataset": "fantasy", "split": "test", "o_c": 209, "c_o": 102, "Missing Mention": 6, "c_c": 133}
+{"model": "gpt", "setup": "setup2", "run": "run1", "dataset": "fantasy", "split": "test", "c_o": 102, "o_c": 209, "c_c": 133, "Missing Mention": 6}

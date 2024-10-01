@@ -1,0 +1,10 @@
+# lf:
+#   run1: ../models/coref_joint_336ef98339e98c974c38019915000014_coref_lf_train_final_runs_1
+#   run2: ../models/coref_joint_f55855e64a8bca2f420dbe05725aa39e_coref_lf_train_final_runs_2
+#   run3: ../models/coref_joint_8538047f8fd4a0aabdd28c46fcd78d6e_coref_lf_train_final_runs_3
+#   run4: ../models/coref_joint_793dd3663757a30f0fbd4ea8a727ee64_coref_lf_train_final_runs_4
+#   run5: ../models/coref_joint_d8148e5c2308d5b0f6a75abf4cde2131_coref_lf_train_final_runs_5
+o:
+  run1: ../models/coref_ontonotes_21169008e782b78c4f8528e8ccacf755_coref_onto_train_final_runs_1
+  # run2: ../models/coref_ontonotes_fae9de44eea017daad27e828dfb271f1_coref_onto_train_final_runs_2
+  # run3: ../models/coref_ontonotes_b02e5c6ea8d56beaf9e9321fc21ca04b_coref_onto_train_final_runs_3

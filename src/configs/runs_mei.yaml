@@ -1,0 +1,23 @@
+lf:
+  static:
+    # run1: ../models/met_joint_89ab88143fcdb9394b2ce0f29917b615_lf_s_train_gen_1
+    # run2: ../models/met_joint_199e4352f8bce4db5568e308b76a6f3e_lf_s_train_gen_2
+    # run3: ../models/met_joint_3031f14c7791121049248e8a88328244_lf_s_train_gen_3
+    # run4: ../models/met_joint_2402ee2c6b0d24768a32428f1bf0a5e5_lf_s_train_gen_4
+    run5: ../models/met_joint_efbc65248a6aedce066a04a9f4f40084_lf_s_train_gen_5
+  
+  hybrid:
+    # run1: ../models/met_joint_d88934ef88325cdc4037be39a4595e33_lf_sd_train_gen_1
+    # run2: ../models/met_joint_4d2f659be16254c28a229fa019a956b0_lf_sd_train_gen_2
+    # run3: ../models/met_joint_f6f7a2b86ba0fa25fa9b691c5b899a1a_lf_sd_train_gen_3
+    run4: ../models/met_joint_f78b0fa9c1d7718b9ed703ddcf621ec9_lf_sd_train_gen_4
+    # run5: ../models/met_joint_abfff0992d2512e1fa18eb3444686071_lf_sd_train_gen_5
+o:
+  static:
+    run1: ../models/met_ontonotes_a7dada5e007b40c4c458b227415ccb3c_onto_s_train_gen_1
+    run2: ../models/met_ontonotes_26710333cdfbb9105d2023f1736d0a1d_onto_s_train_gen_2
+    run3: ../models/met_ontonotes_2cec63002d5ac4b77b61b3282a1ba31e_onto_s_train_gen_3
+  hybrid:
+    run1: ../models/met_ontonotes_5cce09f325df099f0a57222743f8d4da_onto_sd_train_gen_1
+    run2: ../models/met_ontonotes_1a1117fcfd67c431dc9e885830442884_onto_sd_train_gen_2
+    run3: ../models/met_ontonotes_569716bf9b6644d02c5aa9dcc2dcff1d_onto_sd_train_gen_3

@@ -1,0 +1,37 @@
+metrics: ['MUC', 'Bcub', 'CEAFE']
+keep_singletons: True
+seed: 45
+train: True
+use_wandb: True
+desc: "Major Entity Tracking"
+override_encoder: False
+log_vals: False
+# Useful for testing models with different memory architecture than the one trained on
+override_memory: False
+log_dir_add: ""
+device: "cuda:0"
+key: ""
+
+defaults:
+  - _self_
+  - datasets: litbank
+  - model: model
+  - optimizer: adam
+  - trainer: train
+  - infra: local
+  - experiment: debug
+
+paths:
+  resource_dir: "../data/"
+  base_data_dir: ${paths.resource_dir}/raw_data
+  conll_scorer: ${paths.resource_dir}/reference-coreference-scorers/scorer.pl
+  base_model_dir: ${infra.work_dir}/../models ## remove /../
+  model_dir: null
+  best_model_dir: null
+  model_filename: 'model.pth'
+  model_name: null
+  model_name_prefix: 'met_'
+  model_path: null
+  best_model_path: null
+  doc_encoder_dirname: 'doc_encoder'
+

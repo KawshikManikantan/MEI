@@ -1,0 +1,7 @@
+movie_cased:
+  name: "movie_cased"
+  cluster_threshold: 1
+  canonical_cluster_threshold: 1
+  targeted_eval: False
+  num_test_docs: 6
+  has_conll: False

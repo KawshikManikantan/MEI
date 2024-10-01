@@ -1,0 +1,11 @@
+defaults:
+  - litbank
+  - fantasy
+  - aft
+  - aft_increase
+  - aft_ind
+  - animal
+  - pride
+  - movie
+  - movie_cased
+  - avengers

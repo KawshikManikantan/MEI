@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document Viewer</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h2>Select Dataset and Split</h1>
+    <form id="selectionForm" onsubmit="return loadDocuments(event)">
+        <label for="dataset">Dataset:</label>
+        <select id="dataset" name="dataset">
+            {% for dataset in datasets %}
+            <option value="{{ dataset }}">{{ dataset }}</option>
+            {% endfor %}
+        </select>
+
+        <label for="split">Split:</label>
+        <select id="split" name="split">
+            {% for split in splits %}
+            <option value="{{ split }}">{{ split }}</option>
+            {% endfor %}
+        </select>
+
+        <button type="submit">Submit</button>
+    </form>
+
+    <h2>Select Document</h2>
+    <div class="select-container">
+        <select id="document_name" name="document_name" onchange="loadDocument(event)">
+        <option value="">--Select a document--</option>
+    </select>
+
+    </div>
+    
+
+    <div id="documentViewer" class="hidden">
+        
+    </div>
+
+    <script>
+        function loadDocuments(event) {
+            event.preventDefault();
+            const dataset = document.getElementById('dataset').value;
+            const split = document.getElementById('split').value;
+            
+            console.log("Printing dataset and split")
+            console.log(dataset, split);
+
+            fetch('/get_documents', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ dataset: dataset, split: split })
+            })
+            .then(response => response.json())
+            .then(data => {
+                const documentSelect = document.getElementById('document_name');
+                documentSelect.innerHTML = '<option value="">--Select a document--</option>';
+                data.forEach(doc => {
+                    const option = document.createElement('option');
+                    option.value = doc;
+                    option.text = doc;
+                    documentSelect.appendChild(option);
+                });
+            });
+        }
+        
+        function loadDocument(event) {
+            event.preventDefault();
+            console.log("Loading document details")
+            const dataset = document.getElementById('dataset').value;
+            const split = document.getElementById('split').value;
+            const document_name = document.getElementById('document_name').value;
+
+            console.log("Printing dataset, split and document")
+            console.log(dataset, split, document_name);
+
+            if (!document) return;
+
+            fetch('/load_document', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ dataset: dataset, split: split, document: document_name })
+            })
+            .then(response => response.text())
+            .then(data => {
+                const viewer = document.getElementById('documentViewer');
+                viewer.classList.remove('hidden');
+                viewer.innerHTML = data;                
+            });
+        }
+    </script>
+</body>
+</html>

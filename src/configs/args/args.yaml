@@ -1,0 +1,35 @@
+defaults:  
+  - _self_
+  - datasets: litbank
+  - override hydra/hydra_logging: disabled  
+  - override hydra/job_logging: disabled
+  
+## Setup and Dataset Config
+setup: "gm" #choices=["gm", "em", "h2h"] gm: golden mentions em: external mentions h2h: head2head
+split: "test" #choices=["test", "dev"]
+eval: "full" #choices=["full"]
+
+run: null
+
+## Benchmarking Config
+trained_on: "" ## choices["lf/", "o/"] Add the slashes for convenience
+type: "" ## choices["mei/", "coref/"] single: single model hybrid: hybrid model
+mode: "" ## multiple dependent on mei/coref choice --- mei: static/hybrid --- coref: coref_id/coref_cm/coref_fm
+
+## Path configs
+paths:
+  base_addr: "fin"
+  model_base_path: null ## Path to the model -- provided as code argument
+  benchmark_path: "${trained_on}${type}${mode}"
+  dep_addr: "${paths.benchmark_path}${setup}/${run}/"
+  result_destination: "../results/${.base_addr}/${.dep_addr}"
+ 
+hydra:
+  job:
+    chdir: False
+  output_subdir: null
+
+
+
+
+

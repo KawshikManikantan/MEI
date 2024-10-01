@@ -1,0 +1,7 @@
+movie:
+  name: "movie"
+  test_file: "../data/raw_data/movie/longformer_speaker/test.4096.jsonlines"
+  test_file_mei: "../data/raw_data/movie/longformer_speaker/test.4096.mei.jsonlines"
+  test_me: "../data/raw_data/movie/longformer_speaker/test_major_entities.jsonl"
+  tsv: null
+  cluster_threshold: 1

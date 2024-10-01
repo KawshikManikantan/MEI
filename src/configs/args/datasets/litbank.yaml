@@ -1,0 +1,13 @@
+litbank:
+  name: "litbank"
+  train_file : "../data/raw_data/litbank/longformer_speaker/0/train.4096.jsonlines"
+  dev_file : "../data/raw_data/litbank/longformer_speaker/0/dev.4096.jsonlines"
+  test_file : "../data/raw_data/litbank/longformer_speaker/0/test.4096.jsonlines"
+  train_file_mei : "../data/raw_data/litbank/longformer_speaker/0/train.4096.mei.jsonlines"
+  dev_file_mei : "../data/raw_data/litbank/longformer_speaker/0/dev.4096.mei.jsonlines"
+  test_file_mei : "../data/raw_data/litbank/longformer_speaker/0/test.4096.mei.jsonlines"
+  train_me: "../data/raw_data/litbank/longformer_speaker/0/train_major_entities.jsonl"
+  dev_me: "../data/raw_data/litbank/longformer_speaker/0/dev_major_entities.jsonl"
+  test_me: "../data/raw_data/litbank/longformer_speaker/0/test_major_entities.jsonl"
+  tsv: "../data/raw_data/litbank/tsv"
+  cluster_threshold: 1

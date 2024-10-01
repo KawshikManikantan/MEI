@@ -1,0 +1,10 @@
+defaults:
+  - litbank
+  - fantasy
+  - ontonotes
+  - aft
+  - animal
+  - pride
+  - movie
+  - movie_cased
+  - pride

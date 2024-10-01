@@ -1,0 +1,77 @@
+/* Body styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f8f8;
+    margin: 0;
+    padding: 0;
+}
+
+/* Header styles */
+h1 {
+    background-color:#D2E3FC;
+    text-align: center;
+    color: #333;
+}
+
+h2 {
+    background-color: #D2E3FC;
+    text-align: center;
+    margin-top: 30px;
+    color: #333;
+}
+
+/* Form styles */
+form {
+    margin-top: 20px;
+    text-align: center;
+}
+
+label {
+    font-weight: bold;
+}
+
+select {
+    padding: 8px;
+    margin: 5px;
+    font-size: 16px;
+    align-self: center;
+    text-align: center;
+}
+
+button {
+    padding: 10px 20px;
+    margin: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+/* Text box styles */
+.text-box {
+    width: 98%;
+    height: 23vh;
+    overflow-y: scroll;
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+}
+
+/* Hidden class */
+.hidden {
+    display: none;
+}
+
+.select-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

@@ -1,0 +1,15 @@
+defaults:
+ - mem_type: unbounded
+
+emb_size: 20
+mlp_size: 3000
+mlp_depth: 1
+sim_func: hadamard
+entity_rep: wt_avg
+num_feats: 2 ## Change this to remove position information.
+thresh: 0.0
+rep_pos: "learned"
+pseudo_dist: True
+num_embeds: 10
+type: "dyn"
+batch_size: 64

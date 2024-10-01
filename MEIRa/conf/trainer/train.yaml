@@ -1,0 +1,13 @@
+dropout_rate: 0.3
+label_smoothing_wt: 0.1
+ment_loss_mode: 'all'
+normalize_loss: False
+ment_loss_incl: True
+max_evals: 20
+to_save_model: False
+log_frequency: 500
+patience: 10
+eval_per_k_steps: null
+num_training_steps: null
+max_training_segments: 1
+generalise: True

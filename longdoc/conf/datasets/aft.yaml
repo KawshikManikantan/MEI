@@ -1,0 +1,7 @@
+aft:
+  name: "aft"
+  cluster_threshold: 2
+  canonical_cluster_threshold: 2
+  targeted_eval: False
+  num_test_docs: 3
+  has_conll: True

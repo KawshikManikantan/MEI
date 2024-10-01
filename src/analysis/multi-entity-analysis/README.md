@@ -1,0 +1,1 @@
+### This folder deals with code necessary for the analysis of aft dataset with focus on performance of MEIRA-S across number of entities and 1 entity at a time.
