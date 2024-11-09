@@ -28,7 +28,7 @@ defaults:
   - experiment: debug
 
 paths:
-  resource_dir: "../data/"
+  resource_dir: "../mei-data/"
   base_data_dir: ${paths.resource_dir}/raw_data
   conll_scorer: ${paths.resource_dir}/reference-coreference-scorers/scorer.pl
   base_model_dir: ${infra.work_dir}/../models ## remove /../

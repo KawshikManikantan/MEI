@@ -22,6 +22,13 @@ We have added a few keys for more convenience:
 
 `Note: {} -- denotes a specific instance of a particular sub-config repository.`
 
+## Models
+Clone the models from their huggingface repositories:
+`MEIRa-S`: [https://huggingface.co/KawshikManikantan/meira-s](https://huggingface.co/KawshikManikantan/meira-s)
+`MEIRa-H`: [https://huggingface.co/KawshikManikantan/meira-h](https://huggingface.co/KawshikManikantan/meira-h)
+
+Create a directory `models` within the base directory and place the models within it.
+
 ### longdoc
 
 **Template:**
