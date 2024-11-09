@@ -8,11 +8,22 @@ The repository consists of two major components:
 We use hydra configs across the project. Coreference and MEIRa models have their training configs structured with Hydra.
 ## Repo Details
 The repo consists of the following folders:
-- `data`: Contains raw_data of datasets, present in this drive [link]()
+- `mei-data`: Contains raw_data of datasets, present in this drive [link]()
 - `longdoc`: Contains code for training a longdoc coreference model
 - `MEIRa`: Contains code for training a MEIRa model
 - `src`: Contains code that utilizes models trained above to generate MEI outputs
 - `models`: Contains coreference (coref_) and MEI (mei_) models
+  
+
+## Models
+Clone the models from their huggingface repositories:
+`MEIRa-S`: [https://huggingface.co/KawshikManikantan/meira-s](https://huggingface.co/KawshikManikantan/meira-s)
+`MEIRa-H`: [https://huggingface.co/KawshikManikantan/meira-h](https://huggingface.co/KawshikManikantan/meira-h)
+
+Create a directory `models` within the base directory and place the models within it.
+
+## Data
+Download the dataset from [gdrive](https://drive.google.com/drive/folders/1vaVwHhMaDDXLw0rkLzTm5-AOSBDJVNJF?usp=sharing) 
 
 ## How to train models?
 Training code is quite similar to [longdoc](https://github.com/shtoshni/fast-coref). Check the README for more details. \
@@ -21,13 +32,6 @@ We have added a few keys for more convenience:
 - `key`: In addition to unique model identifiers, add a key to uniquely label the experiment -- defaults to null str 
 
 `Note: {} -- denotes a specific instance of a particular sub-config repository.`
-
-## Models
-Clone the models from their huggingface repositories:
-`MEIRa-S`: [https://huggingface.co/KawshikManikantan/meira-s](https://huggingface.co/KawshikManikantan/meira-s)
-`MEIRa-H`: [https://huggingface.co/KawshikManikantan/meira-h](https://huggingface.co/KawshikManikantan/meira-h)
-
-Create a directory `models` within the base directory and place the models within it.
 
 ### longdoc
 
