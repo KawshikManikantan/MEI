@@ -412,7 +412,7 @@ class EntityRankingModel(nn.Module):
         coref_scores_doc = []
         link_time = 0.0
         for idx in range(0, len(document["sentences"])):
-            print("Document: ", document["doc_key"], "Part: ", idx)
+            # print("Document: ", document["doc_key"], "Part: ", idx)
             num_tokens = len(document["sentences"][idx])
 
             new_representatives_entities, rep_filtered_inds = (

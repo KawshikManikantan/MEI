@@ -1,7 +1,7 @@
 models/
 models_orig/
 baseline_src/wandb
-data/raw_data
+mei-data/raw_data
 **/wandb/
 **/trash/
 **/.env

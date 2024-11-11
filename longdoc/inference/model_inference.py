@@ -15,7 +15,7 @@ class Inference:
         checkpoint = torch.load(
             path.join(model_path, "model.pth"),
             map_location=self.device,
-            weights_only=True,
+            weights_only=False,
         )
         self.config = OmegaConf.create(checkpoint["config"])
         if encoder_name is not None:
@@ -114,7 +114,6 @@ if __name__ == "__main__":
     # model = Inference(model_str)
     model = Inference(model_str, "shtoshni/longformer_coreference_ontonotes")
 
-    # doc = " ".join(open("/home/shtoshni/Research/coref_resources/data/ccarol/doc.txt").readlines())
     doc = (
         'The practice of referring to Voldemort as "He Who Must Not Be Named" might have begun when he used a '
         "Taboo. This is, however, unlikely because Dumbledore encouraged using his proper name so as to not fear "

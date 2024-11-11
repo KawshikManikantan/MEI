@@ -855,7 +855,7 @@ class Experiment:
 
     def _initialize_best_model(self):
         checkpoint = torch.load(
-            self.best_model_path, map_location="cpu", weights_only=True
+            self.best_model_path, map_location="cpu", weights_only=False
         )
         config = checkpoint["config"]
         # Copying the saved model config to current config is very important to avoid any issues while
@@ -916,7 +916,7 @@ class Experiment:
                         If false, don't load optimizers, schedulers, and other training variables.
         """
 
-        checkpoint = torch.load(location, map_location="cpu", weights_only=True)
+        checkpoint = torch.load(location, map_location="cpu", weights_only=False)
         logger.info("Loading model from %s" % path.abspath(location))
 
         self.config = checkpoint["config"]

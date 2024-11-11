@@ -1,0 +1,6 @@
+conda install pytorch==2.4.0 torchvision==0.19.0 torchaudio==2.4.0 pytorch-cuda=12.4 -c pytorch -c nvidia 
+conda install -c conda-forge spacy
+conda install -c conda-forge cupy
+python -m spacy download en_core_web_trf
+pip install spacy-transformers
+pip install scipy omegaconf hydra-core jsonlines wandb matplotlib seaborn pandas thefuzz openpyxl

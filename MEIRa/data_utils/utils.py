@@ -6,13 +6,13 @@ import jsonlines
 
 def get_data_file(data_dir: str, split: str, max_segment_len: int) -> str:
     jsonl_file = path.join(
-        data_dir, "{}.{}.met.jsonlines".format(split, max_segment_len)
+        data_dir, "{}.{}.mei.jsonlines".format(split, max_segment_len)
     )
     print("File access: ", jsonl_file)
     if path.exists(jsonl_file):
         return jsonl_file
     else:
-        jsonl_file = path.join(data_dir, "{}.met.jsonlines".format(split))
+        jsonl_file = path.join(data_dir, "{}.mei.jsonlines".format(split))
         if path.exists(jsonl_file):
             return jsonl_file
 

@@ -1,39 +1,39 @@
 litbank:
   name: "litbank"
-  train_file : "../data/raw_data/litbank/longformer_speaker/0/train.4096.jsonlines"
-  dev_file : "../data/raw_data/litbank/longformer_speaker/0/dev.4096.jsonlines"
-  test_file : "../data/raw_data/litbank/longformer_speaker/0/test.4096.jsonlines"
-  train_me: "../data/raw_data/litbank/chars_train_docs"
-  train_me_sota: "../data/raw_data/litbank/longformer_speaker/0/train_major_entities.jsonl"
-  dev_me: "../data/raw_data/litbank/chars_dev_docs"
-  dev_me_sota: "../data/raw_data/litbank/longformer_speaker/0/dev_major_entities.jsonl"
-  test_me: "../data/raw_data/litbank/chars_test_docs"
-  test_me_sota: "../data/raw_data/litbank/longformer_speaker/0/test_major_entities.jsonl"
-  tsv: "../data/raw_data/litbank/tsv"
+  train_file : "../mei-data/raw_data/litbank/longformer_speaker/0/train.4096.jsonlines"
+  dev_file : "../mei-data/raw_data/litbank/longformer_speaker/0/dev.4096.jsonlines"
+  test_file : "../mei-data/raw_data/litbank/longformer_speaker/0/test.4096.jsonlines"
+  train_me: "../mei-data/raw_data/litbank/chars_train_docs"
+  train_me_sota: "../mei-data/raw_data/litbank/longformer_speaker/0/train_major_entities.jsonl"
+  dev_me: "../mei-data/raw_data/litbank/chars_dev_docs"
+  dev_me_sota: "../mei-data/raw_data/litbank/longformer_speaker/0/dev_major_entities.jsonl"
+  test_me: "../mei-data/raw_data/litbank/chars_test_docs"
+  test_me_sota: "../mei-data/raw_data/litbank/longformer_speaker/0/test_major_entities.jsonl"
+  tsv: "../mei-data/raw_data/litbank/tsv"
 
 fantasy:
   name: "fantasy"
-  train_file: "../data/raw_data/fantasy/longformer_speaker/train.4096.jsonlines"
-  dev_file: "../data/raw_data/fantasy/longformer_speaker/dev.4096.jsonlines"
-  test_file: "../data/raw_data/fantasy/longformer_speaker/test.4096.jsonlines"
-  test_me: ../data/raw_data/fantasy/chars_test_docs
-  test_me_sota: ../data/raw_data/fantasy/longformer_speaker/test_major_entities.jsonl
+  train_file: "../mei-data/raw_data/fantasy/longformer_speaker/train.4096.jsonlines"
+  dev_file: "../mei-data/raw_data/fantasy/longformer_speaker/dev.4096.jsonlines"
+  test_file: "../mei-data/raw_data/fantasy/longformer_speaker/test.4096.jsonlines"
+  test_me: ../mei-data/raw_data/fantasy/chars_test_docs
+  test_me_sota: ../mei-data/raw_data/fantasy/longformer_speaker/test_major_entities.jsonl
   tsv: null
 
 aft:
   name: "aft"
-  test_file: "../data/raw_data/aft/longformer_speaker/test.4096.jsonlines"
-  test_me_sota: "../data/raw_data/aft/longformer_speaker/test_major_entities.jsonl"
+  test_file: "../mei-data/raw_data/aft/longformer_speaker/test.4096.jsonlines"
+  test_me_sota: "../mei-data/raw_data/aft/longformer_speaker/test_major_entities.jsonl"
   tsv: null
 
 animal:
   name: "animal"
-  test_file: "../data/raw_data/animal/longformer_speaker/test.4096.jsonlines"
-  test_me_sota: "../data/raw_data/animal/longformer_speaker/test_major_entities.jsonl"
+  test_file: "../mei-data/raw_data/animal/longformer_speaker/test.4096.jsonlines"
+  test_me_sota: "../mei-data/raw_data/animal/longformer_speaker/test_major_entities.jsonl"
   tsv: null
 
 pride:
   name: "pride"
-  test_file: "../data/raw_data/pride/longformer_speaker/test.4096.jsonlines"
-  test_me_sota: "../data/raw_data/pride/longformer_speaker/test_major_entities.jsonl"
+  test_file: "../mei-data/raw_data/pride/longformer_speaker/test.4096.jsonlines"
+  test_me_sota: "../mei-data/raw_data/pride/longformer_speaker/test_major_entities.jsonl"
   tsv: null

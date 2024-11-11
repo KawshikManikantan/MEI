@@ -5,7 +5,7 @@ defaults:
   - override hydra/job_logging: disabled
   
 ## Setup and Dataset Config
-setup: "gm" #choices=["gm", "em", "h2h"] gm: golden mentions em: external mentions h2h: head2head
+setup: "gm" #choices=["gm", "em", "e2e"] gm: golden mentions em: external mentions e2e: end-to-end
 split: "test" #choices=["test", "dev"]
 eval: "full" #choices=["full"]
 
@@ -18,7 +18,7 @@ mode: "" ## multiple dependent on mei/coref choice --- mei: static/hybrid --- co
 
 ## Path configs
 paths:
-  base_addr: "fin"
+  base_addr: "custom"
   model_base_path: null ## Path to the model -- provided as code argument
   benchmark_path: "${trained_on}${type}${mode}"
   dep_addr: "${paths.benchmark_path}${setup}/${run}/"

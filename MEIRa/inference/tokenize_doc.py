@@ -1,5 +1,4 @@
 import torch
-from coref_data_proc.utils import split_into_segments, get_sentence_map
 
 
 class DocumentState:
@@ -31,6 +30,42 @@ class DocumentState:
             ),
             "subtoken_map": subtoken_map,
         }
+
+
+def get_sentence_map(segments, sentence_end):
+    current = 0
+    sent_map = []
+    sent_end_idx = 0
+    assert len(sentence_end) == sum([len(s) for s in segments])
+    for segment in segments:
+        for i in range(len(segment)):
+            sent_map.append(current)
+            current += int(sentence_end[sent_end_idx])
+            sent_end_idx += 1
+    return sent_map
+
+
+def split_into_segments(document_state, max_segment_len, constraints1, constraints2):
+    current = 0
+    while current < len(document_state.subtokens):
+        end = min(current + max_segment_len - 1 - 2, len(document_state.subtokens) - 1)
+        while end >= current and not constraints1[end]:
+            end -= 1
+        if end < current:
+            end = min(
+                current + max_segment_len - 1 - 2, len(document_state.subtokens) - 1
+            )
+            while end >= current and not constraints2[end]:
+                end -= 1
+            if end < current:
+                raise Exception("Can't find valid segment")
+        document_state.segments.append(document_state.subtokens[current : end + 1])
+        subtoken_map = document_state.subtoken_map[current : end + 1]
+        document_state.segment_subtoken_map.append(subtoken_map)
+        if hasattr(document_state, "info"):
+            info = document_state.info[current : end + 1]
+            document_state.segment_info.append(info)
+        current = end + 1
 
 
 def flatten(l):

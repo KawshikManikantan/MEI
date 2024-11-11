@@ -1,39 +1,63 @@
-## General Information:
-This repository consists of the code-base for the trained models that perform [Major Entity Identification](https://arxiv.org/abs/2406.14654). The code-base for few-shot LLM inference will be released soon.
+## General Information
 
-The repository consists of two major components:
-- Coreference-based ([longdoc](https://github.com/shtoshni/fast-coref)) baselines with inference-time mapping to the entities.
-- MEIRa models with direct mappings to entities.
+This repository contains the codebase for trained models performing [Major Entity Identification (MEI)](https://arxiv.org/abs/2406.14654). The code for few-shot LLM inference will be released soon.
 
-We use hydra configs across the project. Coreference and MEIRa models have their training configs structured with Hydra.
-## Repo Details
-The repo consists of the following folders:
-- `mei-data`: Contains raw_data of datasets, present in this drive [link]()
-- `longdoc`: Contains code for training a longdoc coreference model
-- `MEIRa`: Contains code for training a MEIRa model
-- `src`: Contains code that utilizes models trained above to generate MEI outputs
-- `models`: Contains coreference (coref_) and MEI (mei_) models
-  
+### Repository Components:
+1. **Coreference-based Models**: Baseline models using [longdoc](https://github.com/shtoshni/fast-coref) with inference-time mapping to entities.
+2. **MEIRa Models**: Models with direct mappings to entities.
+
+Hydra configurations are used across the project for setting up training for both Coreference and MEIRa models.
+
+---
+
+## Repository Structure
+
+The repository includes the following folders:
+
+- **`mei-data`**: Contains raw datasets for Coreference and MEI models, accessible from [Google Drive](https://drive.google.com/drive/folders/1vaVwHhMaDDXLw0rkLzTm5-AOSBDJVNJF?usp=sharing).
+- **`longdoc`**: Code for training longdoc coreference models.
+- **`MEIRa`**: Code for training MEIRa models.
+- **`src`**: Code that utilizes trained models to generate MEI outputs.
+- **`models`**: Stores coreference (coref_) and MEI (mei_) models.
+
+---
+
+## Environment Setup
+
+To set up the environment, use the `environment.yaml` file provided. Alternatively, you can refer to `commands_env.txt` for a list of commands to manually set up the environment if needed.
+
+---
 
 ## Models
-Clone the models from their huggingface repositories:
-`MEIRa-S`: [https://huggingface.co/KawshikManikantan/meira-s](https://huggingface.co/KawshikManikantan/meira-s)
-`MEIRa-H`: [https://huggingface.co/KawshikManikantan/meira-h](https://huggingface.co/KawshikManikantan/meira-h)
 
-Create a directory `models` within the base directory and place the models within it.
+Clone the models from Hugging Face repositories:
+
+- **MEIRa-S**: [Hugging Face Link](https://huggingface.co/KawshikManikantan/meira-s)
+- **MEIRa-H**: [Hugging Face Link](https://huggingface.co/KawshikManikantan/meira-h)
+
+Create a `models` directory in the base directory and place the models inside.
+
+---
 
 ## Data
-Download the dataset from [gdrive](https://drive.google.com/drive/folders/1vaVwHhMaDDXLw0rkLzTm5-AOSBDJVNJF?usp=sharing) 
 
-## How to train models?
-Training code is quite similar to [longdoc](https://github.com/shtoshni/fast-coref). Check the README for more details. \
-We have added a few keys for more convenience:
-- `device`: specifies the devices to train the model on -- defaults to `cuda:0`
-- `key`: In addition to unique model identifiers, add a key to uniquely label the experiment -- defaults to null str 
+Download the dataset from [Google Drive](https://drive.google.com/drive/folders/1vaVwHhMaDDXLw0rkLzTm5-AOSBDJVNJF?usp=sharing).
 
-`Note: {} -- denotes a specific instance of a particular sub-config repository.`
+---
 
-### longdoc
+## Model Training
+
+Training procedures follow those of [longdoc](https://github.com/shtoshni/fast-coref); refer to its README for details.
+
+#### Training Configuration Keys:
+- **`device`**: Specify the device for training (default: `cuda:0`).
+- **`key`**: Unique identifier for labeling the experiment (default: null).
+
+> **Note**: `{}` indicates a specific instance within a sub-configuration.
+
+### Training Commands
+
+#### Longdoc
 
 **Template:**
 
@@ -45,7 +69,7 @@ python main.py experiment={experiment_name} model/doc_encoder/transformer={backb
 **Example:**
 ```
 cd longdoc/
-python main.py experiment=ontonotes_pseudo model/doc_encoder/transformer=longformer_large use_wandb=True devie="cuda:1" key="onto_train"
+python main.py experiment=ontonotes_pseudo model/doc_encoder/transformer=longformer_large use_wandb=True device="cuda:1" key="onto_train"
 ```
 
 ### MEIRa
@@ -60,13 +84,86 @@ python main.py experiment={experiment_name} model/doc_encoder/transformer={backb
 **Example:**
 ```
 cd MEIRa/
-python main.py experiment=ontonotes_pseudo model/doc_encoder/transformer=longformer_large use_wandb=True devie="cuda:1" key="onto_train" model.memory.type=static
+python main.py experiment=ontonotes_pseudo model/doc_encoder/transformer=longformer_large use_wandb=True device="cuda:1" key="onto_train" model.memory.type=static
 ```
 
-## How to infer?
+## Inference Guide (Dataset Scale)
 
-**Get coreference clusters:**
-```
+### Step 1: Generate Coreference Clusters
+
+Coreference clusters and other metadata generated by the model are stored in `model_path/{dataset_name}/{split}.log.jsonl`.
+
+#### Using Coreference Models:
+
+```bash
 cd longdoc/
-python main.py experiment={experiment_eval} model/doc_encoder/transformer={model_name} use_wandb=False train=False device={cpu/cuda:i/auto} paths.model_dir={model_dir} model.memory.type=static
+python main.py experiment={experiment_eval} model/doc_encoder/transformer={model_name} \
+use_wandb=False train=False device={cpu/cuda:i/auto} paths.model_dir={model_dir}
+```
+
+#### Using MEIRa Models:
+
+```bash
+cd MEIRa/
+python main.py experiment={experiment_eval} model/doc_encoder/transformer={model_name} \
+use_wandb=False train=False device={cpu/cuda:i/auto} paths.model_dir={model_dir} \
+model.memory.type={static/hybrid}
+```
+
+### Step 2: Process Clusters and Evaluate Performance
+
+#### For Coreference Baselines
+
+Coreference models provide clusters of all entities within the document. To map these clusters to specific entities, three mapping methods are available:
+
+- **Coref-ID**: `coref_id/`
+- **Coref-CosineMap**: `coref_cm/`
+- **Coref-FuzzyMap**: `coref-fm/`
+
+> **Note**: For **Coref-ID** mapping, run the following additional command before proceeding with processing:
+
+```bash
+cd MEIRa/
+python main.py experiment={experiment_eval} model/doc_encoder/transformer={model_name} \
+use_wandb=False train=False device={cpu/cuda:i/auto} paths.model_dir={model_dir} model.memory.type=hybrid log_dir_add="coref_id"
+```
+
+#### Evaluate Using Scripts
+
+To evaluate with `src/evaluate/baselines.py` or `src/evaluate/meira.py`, review the configuration file `src/configs/args/args.yaml` for necessary options. You can also check examples in the `src/configs/args/experiments` folder for organizing evaluation configurations.
+
+##### Coreference Evaluation Template
+
+```bash
+cd src/
+python -m evaluate.baselines +experiments/{setup}={experiment_name} \
+paths.model_base_path={model_path} mode={"coref_id/" / "coref_cm/" / "coref_fm"}
+```
+
+##### Coreference Evaluation Example
+
+```bash
+cd src/
+python -m evaluate.baselines +experiments/e2e="lf_test" \
+paths.model_base_path="../models/coref-onto" mode="coref_cm/"
+```
+
+#### For MEIRa Models
+
+The MEIRa model output may include unnecessary metadata for analysis. To process and evaluate only the relevant cluster information, use the following template and example:
+
+##### MEIRa Evaluation Template
+
+```bash
+cd src/
+python -m evaluate.meira +experiments/{setup}={experiment_name} \
+paths.model_base_path={model_path}
+```
+
+##### MEIRa Evaluation Example
+
+```bash
+cd src/
+python -m evaluate.meira +experiments/e2e="lf_test" \
+paths.model_base_path="../models/meira-s"
 ```

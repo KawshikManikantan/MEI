@@ -9,7 +9,7 @@ import wandb
 import torch
 
 ## Uncomment the following line to make the code deterministic and use CUBLAS_WORKSPACE_CONFIG=:4096:8
-torch.use_deterministic_algorithms(True)
+# torch.use_deterministic_algorithms(True)
 import random
 import numpy as np
 

@@ -21,7 +21,7 @@ def index():
 def get_documents():
     dataset = request.json["dataset"]
     split = request.json["split"]
-    documents_path = f"../data/raw_data/{dataset}/text/{split}"
+    documents_path = f"../mei-data/raw_data/{dataset}/text/{split}"
     try:
         documents = os.listdir(documents_path)
         documents = [doc for doc in documents if doc.endswith(".txt")]
@@ -37,7 +37,7 @@ def load_document():
     document_txt = request.json["document"]
     document = document_txt.split(".")[0]
 
-    document_path = f"../data/raw_data/{dataset}/text/{split}/{document_txt}"
+    document_path = f"../mei-data/raw_data/{dataset}/text/{split}/{document_txt}"
     result_dict_path = (
         f"../results/final1/gpt/h2s/{dataset}/{split}/full/desc/result.jsonl"
     )
